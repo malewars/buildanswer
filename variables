@@ -1,0 +1,4 @@
+myclient="CLIENTID"
+client_secret="CLIENTSECRET"
+ENVID="ENVID"
+DEBUG="NO"
