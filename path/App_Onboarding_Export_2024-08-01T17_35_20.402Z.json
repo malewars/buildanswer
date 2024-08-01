@@ -1,0 +1,3057 @@
+{
+  "flows": [
+    {
+      "companyId": "4c7830ac-8e1b-46cf-82bf-239455f78dff",
+      "authTokenExpireIds": [],
+      "connectorIds": [
+        "pingOneFormsConnector",
+        "functionsConnector",
+        "nodeConnector",
+        "httpConnector",
+        "flowConnector",
+        "variablesConnector",
+        "pingOneAuthenticationConnector"
+      ],
+      "createdDate": 1722533460187,
+      "currentVersion": 22,
+      "customerId": "cf8116fb1aac26dffd0d7b9e9e6f3d1d",
+      "description": "Imported on Thu Aug 01 2024 16:06:49 GMT+0000 (Coordinated Universal Time)",
+      "flowStatus": "enabled",
+      "isOutputSchemaSaved": false,
+      "name": "App Onboarding",
+      "publishedVersion": 22,
+      "settings": {
+        "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+        "intermediateLoadingScreenCSS": "",
+        "intermediateLoadingScreenHTML": "",
+        "logLevel": 3
+      },
+      "timeouts": "null",
+      "updatedDate": 1722533462129,
+      "flowId": "3be6b21f6256c6bc5943479f7ad7c1f7",
+      "versionId": 22,
+      "graphData": {
+        "elements": {
+          "nodes": [
+            {
+              "data": {
+                "id": "6p16ljgtbn",
+                "nodeType": "CONNECTION",
+                "connectionId": "8209285e0d2f3fc76bfd23fd10d45e6f",
+                "connectorId": "pingOneFormsConnector",
+                "name": "PingOne Forms",
+                "label": "PingOne Forms",
+                "status": "configured",
+                "capabilityName": "customForm",
+                "type": "action",
+                "properties": {
+                  "formData": {
+                    "value": [
+                      {
+                        "key": "appName",
+                        "value": ""
+                      },
+                      {
+                        "key": "protocol",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "form": {
+                    "value": "05e51182-d6e7-40d8-81a6-3c2b78a8e550"
+                  }
+                },
+                "idUnique": "xnyvg2oit8"
+              },
+              "position": {
+                "x": 907,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ylk393mzav",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "ojnqz28p4n"
+              },
+              "position": {
+                "x": 1057,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "r1xy3o9bad",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "AEqualsMultipleB",
+                "type": "trigger",
+                "properties": {
+                  "leftValueA": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingone-forms.svg\",\n        \"url\": \"protocol\",\n        \"data\": \"{{local.6p16ljgtbn.payload.output.formData.protocol}}\",\n        \"tooltip\": \"{{local.6p16ljgtbn.payload.output.formData.protocol}}\",\n        \"children\": [\n          {\n            \"text\": \"protocol\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "rightValueMultiple": {
+                    "value": [
+                      {
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"SAML\"\n      }\n    ]\n  }\n]",
+                        "id": "vicbyyoi1v"
+                      },
+                      {
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"OIDC\"\n      }\n    ]\n  }\n]",
+                        "id": "b6tfmdf0ms"
+                      }
+                    ]
+                  }
+                },
+                "idUnique": "gju0zl3zry"
+              },
+              "position": {
+                "x": 1237,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "unutmkb1fp",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "startNode",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "SAML Details"
+                  },
+                  "inputSchema": {
+                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"success\": {\n\t\t\t\"type\": \"boolean\",\n\t\t\t\"displayName\": \"success\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"success\"\n\t\t},\n\t\t\"appName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"App Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"appName\"\n\t\t}\n\t}\n}"
+                  }
+                },
+                "idUnique": "96jtw9ihut"
+              },
+              "position": {
+                "x": 284,
+                "y": 532
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "5llf3h01qh",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "startNode",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "OIDC Details"
+                  },
+                  "inputSchema": {
+                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"success\": {\n\t\t\t\"type\": \"boolean\",\n\t\t\t\"displayName\": \"success\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"success\"\n\t\t},\n\t\t\"appName\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"App Name\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"appName\"\n\t\t}\n\t}\n}"
+                  }
+                },
+                "idUnique": "v3rndnok5z"
+              },
+              "position": {
+                "x": 284,
+                "y": 712
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "bias1wk2mj",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "v8khnzubkx"
+              },
+              "position": {
+                "x": 1387,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "3fsdfo065s",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "unutmkb1fp"
+                  },
+                  "appName": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingone-forms.svg\",\n        \"url\": \"appName\",\n        \"data\": \"{{local.6p16ljgtbn.payload.output.formData.appName}}\",\n        \"tooltip\": \"{{local.6p16ljgtbn.payload.output.formData.appName}}\",\n        \"children\": [\n          {\n            \"text\": \"appName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                },
+                "idUnique": "qbpsnbvwy0"
+              },
+              "position": {
+                "x": 1567,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "yjyjz3w7hq",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "l5z2sfoh68"
+              },
+              "position": {
+                "x": 1387,
+                "y": 356
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "gmsnt4urgw",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "5llf3h01qh"
+                  },
+                  "appName": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingone-forms.svg\",\n        \"url\": \"appName\",\n        \"data\": \"{{local.6p16ljgtbn.payload.output.formData.appName}}\",\n        \"tooltip\": \"{{local.6p16ljgtbn.payload.output.formData.appName}}\",\n        \"children\": [\n          {\n            \"text\": \"appName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                },
+                "idUnique": "qt2hzfns9m"
+              },
+              "position": {
+                "x": 1567,
+                "y": 356
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "3sk37oyg7d",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "rax7qyfdv6"
+              },
+              "position": {
+                "x": 404,
+                "y": 532
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "0v4tnpiy6t",
+                "nodeType": "CONNECTION",
+                "connectionId": "8209285e0d2f3fc76bfd23fd10d45e6f",
+                "connectorId": "pingOneFormsConnector",
+                "name": "PingOne Forms",
+                "label": "PingOne Forms",
+                "status": "configured",
+                "capabilityName": "customForm",
+                "type": "action",
+                "properties": {
+                  "formData": {
+                    "value": [
+                      {
+                        "key": "acsUrl",
+                        "value": ""
+                      },
+                      {
+                        "key": "spEntityId",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "form": {
+                    "value": "3a81a908-75ac-4c4c-9c38-f5c779b36fc1"
+                  },
+                  "nodeTitle": {
+                    "value": "SAML Form"
+                  }
+                },
+                "idUnique": "lhvedaofz4"
+              },
+              "position": {
+                "x": 584,
+                "y": 532
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "2zyzh7mxjp",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "p8n96c6gf5"
+              },
+              "position": {
+                "x": 404,
+                "y": 712
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "uuthwbxcaw",
+                "nodeType": "CONNECTION",
+                "connectionId": "8209285e0d2f3fc76bfd23fd10d45e6f",
+                "connectorId": "pingOneFormsConnector",
+                "name": "PingOne Forms",
+                "label": "PingOne Forms",
+                "status": "configured",
+                "capabilityName": "customForm",
+                "type": "action",
+                "properties": {
+                  "formData": {
+                    "value": [
+                      {
+                        "key": "redirectUris",
+                        "value": ""
+                      },
+                      {
+                        "key": "tokenEndpointAuthMethod",
+                        "value": ""
+                      },
+                      {
+                        "key": "pkceEnforcement",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  "form": {
+                    "value": "84df09a6-620a-41ab-b9e7-644518425b55"
+                  },
+                  "nodeTitle": {
+                    "value": "OIDC Form"
+                  }
+                },
+                "idUnique": "tkag3ja58d"
+              },
+              "position": {
+                "x": 584,
+                "y": 712
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ek66i7i7nk",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "customFunction",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "OIDC Request Template"
+                  },
+                  "code": {
+                    "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({ params }) => {\n\tconst { appName, redirectUris, tokenEndpointAuthMethod, pkceEnforcement } = params;\n\tconst requestBody = {\n\t\t\"enabled\": true,\n\t\t\"name\": appName,\n\t\t\"description\": \"DV App Onboarding\",\n\t\t\"type\": \"WEB_APP\",\n\t\t\"protocol\": \"OPENID_CONNECT\",\n\t\t\"grantTypes\": [\n\t\t\t\"AUTHORIZATION_CODE\"\n\t\t],\n\t\t\"redirectUris\": [\n\t\t\tredirectUris\n\t\t],\n\t\t\"responseTypes\": [\n\t\t\t\"CODE\"\n\t\t],\n\t\t\"tokenEndpointAuthMethod\": tokenEndpointAuthMethod,\n\t\t\"pkceEnforcement\": pkceEnforcement ? pkceEnforcement : \"OPTIONAL\",\n\t\t\"refreshTokenDuration\": 86400,\n\t\t\"refreshTokenRollingDuration\": 86400\n\t}\n\treturn { requestBody }\n}"
+                  },
+                  "outputSchema": {
+                    "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"requestBody\": {\n\t\t\t\t\"type\": \"object\"\n\t\t\t}\n\t\t}\n\t}\n}"
+                  },
+                  "variableInputList": {
+                    "value": [
+                      {
+                        "name": "appName",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"appName\",\n        \"data\": \"{{local.5llf3h01qh.payload.output.appName}}\",\n        \"tooltip\": \"{{local.5llf3h01qh.payload.output.appName}}\",\n        \"children\": [\n          {\n            \"text\": \"appName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      },
+                      {
+                        "name": "redirectUris",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingone-forms.svg\",\n        \"url\": \"redirectUris\",\n        \"data\": \"{{local.uuthwbxcaw.payload.output.formData.redirectUris}}\",\n        \"tooltip\": \"{{local.uuthwbxcaw.payload.output.formData.redirectUris}}\",\n        \"children\": [\n          {\n            \"text\": \"redirectUris\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      },
+                      {
+                        "name": "tokenEndpointAuthMethod",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingone-forms.svg\",\n        \"url\": \"tokenEndpointAuthMethod\",\n        \"data\": \"{{local.uuthwbxcaw.payload.output.formData.tokenEndpointAuthMethod}}\",\n        \"tooltip\": \"{{local.uuthwbxcaw.payload.output.formData.tokenEndpointAuthMethod}}\",\n        \"children\": [\n          {\n            \"text\": \"tokenEndpointAuthMethod\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      },
+                      {
+                        "name": "pkceEnforcement",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingone-forms.svg\",\n        \"url\": \"pkceEnforcement\",\n        \"data\": \"{{local.uuthwbxcaw.payload.output.formData.pkceEnforcement}}\",\n        \"tooltip\": \"{{local.uuthwbxcaw.payload.output.formData.pkceEnforcement}}\",\n        \"children\": [\n          {\n            \"text\": \"pkceEnforcement\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  }
+                },
+                "idUnique": "8e9rwraa7c"
+              },
+              "position": {
+                "x": 914,
+                "y": 712
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "xfbsify5dt",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "customFunction",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "SAML Request Template"
+                  },
+                  "code": {
+                    "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({ params }) => {\n\tconst { appName, acsUrls, spEntityId } = params;\n\tconst requestBody = {\n\t\t\"name\": appName,\n\t\t\"description\": \"DV Onboarding\",\n\t\t\"enabled\": true,\n\t\t\"type\": \"WEB_APP\",\n\t\t\"protocol\": \"SAML\",\n\t\t\"assertionDuration\": 60,\n\t\t\"acsUrls\": [acsUrls],\n\t\t\"spEntityId\": spEntityId,\n\t}\n\treturn { requestBody }\n}"
+                  },
+                  "outputSchema": {
+                    "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"requestBody\": {\n\t\t\t\t\"type\": \"object\"\n\t\t\t}\n\t\t}\n\t}\n}"
+                  },
+                  "variableInputList": {
+                    "value": [
+                      {
+                        "name": "acsUrls",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingone-forms.svg\",\n        \"url\": \"acsUrl\",\n        \"data\": \"{{local.0v4tnpiy6t.payload.output.formData.acsUrl}}\",\n        \"tooltip\": \"{{local.0v4tnpiy6t.payload.output.formData.acsUrl}}\",\n        \"children\": [\n          {\n            \"text\": \"acsUrl\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      },
+                      {
+                        "name": "spEntityId",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingone-forms.svg\",\n        \"url\": \"spEntityId\",\n        \"data\": \"{{local.0v4tnpiy6t.payload.output.formData.spEntityId}}\",\n        \"tooltip\": \"{{local.0v4tnpiy6t.payload.output.formData.spEntityId}}\",\n        \"children\": [\n          {\n            \"text\": \"spEntityId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      },
+                      {
+                        "name": "appName",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"appName\",\n        \"data\": \"{{local.unutmkb1fp.payload.output.appName}}\",\n        \"tooltip\": \"{{local.unutmkb1fp.payload.output.appName}}\",\n        \"children\": [\n          {\n            \"text\": \"appName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  }
+                },
+                "idUnique": "2s8mpvksmq"
+              },
+              "position": {
+                "x": 914,
+                "y": 532
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "6jhio6xkm3",
+                "nodeType": "EVAL",
+                "idUnique": "3kws9qwq5y"
+              },
+              "position": {
+                "x": 734,
+                "y": 532
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "q8ympswko3",
+                "nodeType": "EVAL",
+                "idUnique": "j4e9rbldps"
+              },
+              "position": {
+                "x": 734,
+                "y": 712
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "2oa27hccii",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "startNode",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "Create App"
+                  },
+                  "inputSchema": {
+                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"success\": {\n\t\t\t\"type\": \"boolean\",\n\t\t\t\"displayName\": \"success\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"success\"\n\t\t},\n\t\t\"requestBody\": {\n\t\t\t\"type\": \"object\",\n\t\t\t\"displayName\": \"Request Body\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"requestBody\"\n\t\t}\n\t}\n}"
+                  }
+                },
+                "idUnique": "5ui5n5mv01"
+              },
+              "position": {
+                "x": 284,
+                "y": 892
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "wopp7tpy6l",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "bcdqcay2c5"
+              },
+              "position": {
+                "x": 404,
+                "y": 892
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "853cnb7pec",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "Http",
+                "status": "configured",
+                "capabilityName": "makeRestApiCall",
+                "type": "trigger",
+                "properties": {
+                  "url": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://api.pingone.com/v1\"\n      },\n      {\n        \"text\": \"/environments/\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"companyId\",\n        \"data\": \"{{global.companyId}}\",\n        \"tooltip\": \"{{global.companyId}}\",\n        \"children\": [\n          {\n            \"text\": \"companyId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"/applications\"\n      }\n    ]\n  }\n]"
+                  },
+                  "httpMethod": {
+                    "value": "POST"
+                  },
+                  "httpBody": {
+                    "value": "raw"
+                  },
+                  "headers": {
+                    "value": [
+                      {
+                        "key": "Authorization",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Bearer \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"accessToken\",\n        \"data\": \"{{local.vrnv6tkth3.payload.output.accessToken}}\",\n        \"tooltip\": \"{{local.vrnv6tkth3.payload.output.accessToken}}\",\n        \"children\": [\n          {\n            \"text\": \"accessToken\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  },
+                  "raw": {
+                    "value": "{{local.2oa27hccii.payload.output.requestBody}}"
+                  },
+                  "keepOutputIfNotValid": {
+                    "value": true
+                  },
+                  "nodeTitle": {
+                    "value": "Create App Call"
+                  },
+                  "outputSchema": {
+                    "value": "{\r\n    \"type\": \"object\",\r\n    \"properties\": {\r\n        \"_links\": {\r\n            \"type\": \"object\",\r\n            \"properties\": {\r\n                \"self\": {\r\n                    \"type\": \"object\",\r\n                    \"properties\": {\r\n                        \"href\": {\r\n                            \"type\": \"string\"\r\n                        }\r\n                    }\r\n                },\r\n                \"environment\": {\r\n                    \"type\": \"object\",\r\n                    \"properties\": {\r\n                        \"href\": {\r\n                            \"type\": \"string\"\r\n                        }\r\n                    }\r\n                },\r\n                \"attributes\": {\r\n                    \"type\": \"object\",\r\n                    \"properties\": {\r\n                        \"href\": {\r\n                            \"type\": \"string\"\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        },\r\n        \"environment\": {\r\n            \"type\": \"object\",\r\n            \"properties\": {\r\n                \"id\": {\r\n                    \"type\": \"string\"\r\n                }\r\n            }\r\n        },\r\n        \"id\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"name\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"description\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"enabled\": {\r\n            \"type\": \"boolean\"\r\n        },\r\n        \"type\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"protocol\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"createdAt\": {\r\n            \"type\": \"string\"\r\n        }\r\n    }\r\n}"
+                  }
+                },
+                "idUnique": "cp7zk87nz6"
+              },
+              "position": {
+                "x": 914,
+                "y": 892
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "vrnv6tkth3",
+                "nodeType": "CONNECTION",
+                "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+                "connectorId": "flowConnector",
+                "name": "Flow Connector",
+                "label": "Flow Conductor",
+                "status": "configured",
+                "capabilityName": "startSubFlow",
+                "type": "action",
+                "properties": {
+                  "subFlowId": {
+                    "value": {
+                      "label": "[Sub]Get Worker Token",
+                      "value": "8a903ffdfccbc3067c8592d0b7be60e6"
+                    }
+                  },
+                  "subFlowVersionId": {
+                    "value": -1
+                  },
+                  "nodeTitle": {
+                    "value": "Get Worker Token"
+                  }
+                },
+                "idUnique": "16sxdadwwr"
+              },
+              "position": {
+                "x": 584,
+                "y": 892
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "oivvxmfw7x",
+                "nodeType": "EVAL",
+                "idUnique": "1s6wayodfh"
+              },
+              "position": {
+                "x": 734,
+                "y": 892
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ch6l3xs4ci",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "q8eyfe5lrh"
+              },
+              "position": {
+                "x": 1064,
+                "y": 532
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "qb0170v5td",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "2oa27hccii"
+                  },
+                  "requestBody": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"requestBody\",\n        \"data\": \"{{local.xfbsify5dt.payload.output.requestBody}}\",\n        \"tooltip\": \"{{local.xfbsify5dt.payload.output.requestBody}}\",\n        \"children\": [\n          {\n            \"text\": \"requestBody\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                },
+                "idUnique": "jkrtu1ghoy"
+              },
+              "position": {
+                "x": 1244,
+                "y": 532
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "l135gyugni",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "2oa27hccii"
+                  },
+                  "requestBody": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"requestBody\",\n        \"data\": \"{{local.ek66i7i7nk.payload.output.requestBody}}\",\n        \"tooltip\": \"{{local.ek66i7i7nk.payload.output.requestBody}}\",\n        \"children\": [\n          {\n            \"text\": \"requestBody\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                },
+                "idUnique": "601500ynz9"
+              },
+              "position": {
+                "x": 1244,
+                "y": 712
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "vmt3xqorpy",
+                "nodeType": "EVAL",
+                "idUnique": "gxxsxo8f5y"
+              },
+              "position": {
+                "x": 1064,
+                "y": 712
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "w3f5h5byjl",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "startNode",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "Assign App Owner Role"
+                  },
+                  "inputSchema": {
+                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"success\": {\n\t\t\t\"type\": \"boolean\",\n\t\t\t\"displayName\": \"success\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"success\"\n\t\t},\n\t\t\"appId\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"App ID\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"appId\"\n\t\t}\n\t}\n}"
+                  }
+                },
+                "idUnique": "13e8uomwi5"
+              },
+              "position": {
+                "x": 284,
+                "y": 1072
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "7n9w0e5fsr",
+                "nodeType": "CONNECTION",
+                "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+                "connectorId": "flowConnector",
+                "name": "Flow Connector",
+                "label": "Flow Conductor",
+                "status": "configured",
+                "capabilityName": "startSubFlow",
+                "type": "action",
+                "properties": {
+                  "subFlowId": {
+                    "value": {
+                      "label": "[Sub]Get Worker Token",
+                      "value": "8a903ffdfccbc3067c8592d0b7be60e6"
+                    }
+                  },
+                  "subFlowVersionId": {
+                    "value": -1
+                  },
+                  "nodeTitle": {
+                    "value": "Get Worker Token"
+                  }
+                },
+                "idUnique": "2et4s075jl"
+              },
+              "position": {
+                "x": 584,
+                "y": 1072
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "29563zde6q",
+                "nodeType": "EVAL",
+                "idUnique": "6q8sjftbb4"
+              },
+              "position": {
+                "x": 404,
+                "y": 1072
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ylyzupl4s4",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "Http",
+                "status": "configured",
+                "capabilityName": "makeRestApiCall",
+                "type": "trigger",
+                "properties": {
+                  "url": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://api.pingone.com/v1/environments/\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"companyId\",\n        \"data\": \"{{global.companyId}}\",\n        \"tooltip\": \"{{global.companyId}}\",\n        \"children\": [\n          {\n            \"text\": \"companyId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"/users/\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"variable.svg\",\n        \"url\": \"userID\",\n        \"data\": \"{{global.variables.userID}}\",\n        \"tooltip\": \"{{global.variables.userID}}\",\n        \"children\": [\n          {\n            \"text\": \"userID\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"/roleAssignments\"\n      }\n    ]\n  }\n]"
+                  },
+                  "httpMethod": {
+                    "value": "POST"
+                  },
+                  "headers": {
+                    "value": [
+                      {
+                        "key": "Authorization",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Bearer \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"flow-connector.svg\",\n        \"url\": \"accessToken\",\n        \"data\": \"{{local.7n9w0e5fsr.payload.output.accessToken}}\",\n        \"tooltip\": \"{{local.7n9w0e5fsr.payload.output.accessToken}}\",\n        \"children\": [\n          {\n            \"text\": \"accessToken\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  },
+                  "httpBody": {
+                    "value": "raw"
+                  },
+                  "raw": {
+                    "value": "{\r\n    \"role\": {\r\n        \"id\": \"{{global.company.variables.App Owner Role ID}}\"\r\n    },\r\n    \"scope\": {\r\n        \"id\": \"{{local.w3f5h5byjl.payload.output.appId}}\",\r\n        \"type\": \"APPLICATION\"\r\n    }\r\n}"
+                  },
+                  "nodeTitle": {
+                    "value": "Assign Role Call"
+                  },
+                  "keepOutputIfNotValid": {
+                    "value": true
+                  }
+                },
+                "idUnique": "plzplx0c1n"
+              },
+              "position": {
+                "x": 914,
+                "y": 1072
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "9vo4pvzbda",
+                "nodeType": "EVAL",
+                "idUnique": "21d65qpxtl"
+              },
+              "position": {
+                "x": 734,
+                "y": 1072
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "n8xksd2fyt",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "9ltfhktctt"
+              },
+              "position": {
+                "x": 727,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "wnwc1tkwwh",
+                "nodeType": "CONNECTION",
+                "connectionId": "06922a684039827499bdbdd97f49827b",
+                "connectorId": "variablesConnector",
+                "name": "Variables",
+                "label": "Variables",
+                "status": "configured",
+                "capabilityName": "saveValue",
+                "type": "trigger",
+                "properties": {
+                  "saveVariables": {
+                    "value": [
+                      {
+                        "name": "userID",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingIdentity.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.zuiges5u9w.payload.output.session.user.id}}\",\n        \"tooltip\": \"{{local.zuiges5u9w.payload.output.session.user.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                        "key": 0.06358047760831087,
+                        "label": "userID (string - flowInstance)",
+                        "type": "string",
+                        "nameDefault": "id"
+                      }
+                    ]
+                  }
+                },
+                "idUnique": "t8qzjdycu3"
+              },
+              "position": {
+                "x": 577,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "xyc4tv4g2g",
+                "nodeType": "EVAL",
+                "label": "Evaluator"
+              },
+              "position": {
+                "x": 1064,
+                "y": 892
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "18h9hg44ar",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Teleport",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "w3f5h5byjl"
+                  },
+                  "appId": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"id\",\n        \"data\": \"{{local.853cnb7pec.payload.output.rawResponse.body.id}}\",\n        \"tooltip\": \"{{local.853cnb7pec.payload.output.rawResponse.body.id}}\",\n        \"children\": [\n          {\n            \"text\": \"id\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                }
+              },
+              "position": {
+                "x": 1244,
+                "y": 892
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "myrfhigre7",
+                "nodeType": "EVAL",
+                "label": "Evaluator"
+              },
+              "position": {
+                "x": 1064,
+                "y": 1072
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "epmx506wbf",
+                "nodeType": "CONNECTION",
+                "connectionId": "8209285e0d2f3fc76bfd23fd10d45e6f",
+                "connectorId": "pingOneFormsConnector",
+                "name": "PingOne Forms",
+                "label": "PingOne Forms",
+                "status": "configured",
+                "capabilityName": "customMessage",
+                "type": "action",
+                "properties": {
+                  "formData": {
+                    "value": []
+                  },
+                  "message": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"pingone-forms.svg\",\n        \"url\": \"appName\",\n        \"data\": \"{{local.6p16ljgtbn.payload.output.formData.appName}}\",\n        \"tooltip\": \"{{local.6p16ljgtbn.payload.output.formData.appName}}\",\n        \"children\": [\n          {\n            \"text\": \"appName\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \" was created successfully.\"\n      }\n    ]\n  },\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  },\n  {\n    \"children\": [\n      {\n        \"text\": \"Update your application details here:\"\n      }\n    ]\n  },\n  {\n    \"children\": [\n      {\n        \"text\": \"https://console.pingone.com/?env=\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"companyId\",\n        \"data\": \"{{global.companyId}}\",\n        \"tooltip\": \"{{global.companyId}}\",\n        \"children\": [\n          {\n            \"text\": \"companyId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                }
+              },
+              "position": {
+                "x": 1244,
+                "y": 1072
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "evpx8zwduv",
+                "nodeType": "EVAL",
+                "label": "Evaluator"
+              },
+              "position": {
+                "x": 397,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "zuiges5u9w",
+                "nodeType": "CONNECTION",
+                "connectionId": "c3e6a164bde107954e93f5c09f0c8bce",
+                "connectorId": "pingOneAuthenticationConnector",
+                "name": "PingOne Authentication",
+                "label": "PingOne Authentication",
+                "status": "configured",
+                "capabilityName": "checkSession",
+                "type": "action",
+                "properties": {
+                  "authenticationMethodLastUsedIn": {
+                    "value": 480
+                  }
+                }
+              },
+              "position": {
+                "x": 277,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            }
+          ],
+          "edges": [
+            {
+              "data": {
+                "id": "segzjduube",
+                "source": "vrnv6tkth3",
+                "target": "oivvxmfw7x"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ojqc28wxgx",
+                "source": "q8ympswko3",
+                "target": "ek66i7i7nk"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "hcrgbar006",
+                "source": "uuthwbxcaw",
+                "target": "q8ympswko3"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "wfsmumqosh",
+                "source": "2zyzh7mxjp",
+                "target": "uuthwbxcaw"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "p3o9tnkn2a",
+                "source": "5llf3h01qh",
+                "target": "2zyzh7mxjp"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "dmbzc7gujl",
+                "source": "oivvxmfw7x",
+                "target": "853cnb7pec"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "asdyents01",
+                "source": "yjyjz3w7hq",
+                "target": "gmsnt4urgw"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "h4m3ibjfk5",
+                "source": "6p16ljgtbn",
+                "target": "ylk393mzav"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "h8e3ixsf67",
+                "source": "ylk393mzav",
+                "target": "r1xy3o9bad"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "0yja56b6ic",
+                "source": "r1xy3o9bad",
+                "target": "bias1wk2mj",
+                "multiValueSourceId": "vicbyyoi1v"
+              },
+              "position": {
+                "x": 64,
+                "y": 52
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "1f17o4gmz5",
+                "source": "bias1wk2mj",
+                "target": "3fsdfo065s"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "sft46rnkdo",
+                "source": "r1xy3o9bad",
+                "target": "yjyjz3w7hq",
+                "multiValueSourceId": "b6tfmdf0ms"
+              },
+              "position": {
+                "x": 64,
+                "y": 92
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "xzqhlehykv",
+                "source": "2oa27hccii",
+                "target": "wopp7tpy6l"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "vqr2ku47gd",
+                "source": "wopp7tpy6l",
+                "target": "vrnv6tkth3"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "i740x2q3l5",
+                "source": "unutmkb1fp",
+                "target": "3sk37oyg7d"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "wsdqv5qocz",
+                "source": "3sk37oyg7d",
+                "target": "0v4tnpiy6t"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "6xolds3x1v",
+                "source": "0v4tnpiy6t",
+                "target": "6jhio6xkm3"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "92rn4bye6q",
+                "source": "6jhio6xkm3",
+                "target": "xfbsify5dt"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "346qz9g96k",
+                "source": "xfbsify5dt",
+                "target": "ch6l3xs4ci"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "bqluyklvgp",
+                "source": "ch6l3xs4ci",
+                "target": "qb0170v5td"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "q7e5ebo9dt",
+                "source": "ek66i7i7nk",
+                "target": "vmt3xqorpy"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "bxzfqc0r44",
+                "source": "vmt3xqorpy",
+                "target": "l135gyugni"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "t6j0icaglw",
+                "source": "w3f5h5byjl",
+                "target": "29563zde6q"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "3wko18ojun",
+                "source": "29563zde6q",
+                "target": "7n9w0e5fsr"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "24sau3cxja",
+                "source": "7n9w0e5fsr",
+                "target": "9vo4pvzbda"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "gb3t8gpl4m",
+                "source": "9vo4pvzbda",
+                "target": "ylyzupl4s4"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "glp2ps3b5q",
+                "source": "n8xksd2fyt",
+                "target": "6p16ljgtbn"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "loort7k2fh",
+                "source": "wnwc1tkwwh",
+                "target": "n8xksd2fyt"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "mevj43cwa1",
+                "source": "853cnb7pec",
+                "target": "xyc4tv4g2g"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "i8e4gd55dr",
+                "source": "xyc4tv4g2g",
+                "target": "18h9hg44ar"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "zf13dvtbnl",
+                "source": "ylyzupl4s4",
+                "target": "myrfhigre7"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "mktfb8fi8t",
+                "source": "myrfhigre7",
+                "target": "epmx506wbf"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "uw5fq0fz4f",
+                "source": "evpx8zwduv",
+                "target": "wnwc1tkwwh"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ea1okcslvu",
+                "source": "zuiges5u9w",
+                "target": "evpx8zwduv"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            }
+          ]
+        },
+        "data": {},
+        "zoomingEnabled": true,
+        "userZoomingEnabled": true,
+        "zoom": 1,
+        "minZoom": 1e-50,
+        "maxZoom": 1e+50,
+        "panningEnabled": true,
+        "userPanningEnabled": true,
+        "pan": {
+          "x": 0,
+          "y": 0
+        },
+        "boxSelectionEnabled": true,
+        "renderer": {
+          "name": "null"
+        }
+      },
+      "flowColor": "#CACED3",
+      "savedDate": 1722533460084,
+      "variables": [
+        {
+          "context": "company",
+          "createdDate": 1722528409309,
+          "fields": {
+            "type": "string",
+            "displayName": "Application Owner Role ID",
+            "value": "da1f99b8-148c-11ee-be56-0242ac120002",
+            "mutable": true,
+            "min": 0,
+            "max": 2000
+          },
+          "id": "a4ed0ffc-7a00-4313-b1ad-6dbc9a6e977d",
+          "type": "property",
+          "visibility": "private",
+          "name": "App Owner Role ID##SK##company",
+          "companyId": "4c7830ac-8e1b-46cf-82bf-239455f78dff"
+        },
+        {
+          "context": "flowInstance",
+          "createdDate": 1716395147016,
+          "fields": {
+            "type": "string",
+            "displayName": "PingOne user id",
+            "mutable": true,
+            "min": 0,
+            "max": 2000
+          },
+          "id": "8524f786-ec37-4cba-937a-cada9ccabb92",
+          "type": "property",
+          "visibility": "private",
+          "name": "userID##SK##flowInstance",
+          "companyId": "4c7830ac-8e1b-46cf-82bf-239455f78dff"
+        }
+      ],
+      "connections": [],
+      "parentFlowId": "3be6b21f6256c6bc5943479f7ad7c1f7"
+    },
+    {
+      "companyId": "4c7830ac-8e1b-46cf-82bf-239455f78dff",
+      "authTokenExpireIds": [],
+      "connectorIds": [
+        "functionsConnector",
+        "httpConnector",
+        "nodeConnector",
+        "variablesConnector"
+      ],
+      "createdDate": 1722532383762,
+      "currentVersion": 2,
+      "customerId": "cf8116fb1aac26dffd0d7b9e9e6f3d1d",
+      "description": "Imported on Thu Aug 01 2024 16:06:48 GMT+0000 (Coordinated Universal Time)",
+      "flowStatus": "enabled",
+      "isOutputSchemaSaved": true,
+      "name": "[Sub]Get Worker Token",
+      "outputSchemaCompiled": {
+        "output": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "accessToken": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "publishedVersion": 2,
+      "settings": {
+        "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+        "intermediateLoadingScreenCSS": "",
+        "intermediateLoadingScreenHTML": "",
+        "logLevel": 2
+      },
+      "timeouts": "null",
+      "updatedDate": 1722532385744,
+      "flowId": "8a903ffdfccbc3067c8592d0b7be60e6",
+      "versionId": 2,
+      "graphData": {
+        "elements": {
+          "nodes": [
+            {
+              "data": {
+                "id": "jnza2xc79t",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "ALessThanB",
+                "type": "trigger",
+                "properties": {
+                  "leftValueA": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"systemTimePlusOne\",\n        \"data\": \"{{local.mdtprhtds9.payload.output.systemTimePlusOne}}\",\n        \"tooltip\": \"{{local.mdtprhtds9.payload.output.systemTimePlusOne}}\",\n        \"children\": [\n          {\n            \"text\": \"systemTimePlusOne\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  },
+                  "type": {
+                    "value": "number"
+                  },
+                  "nodeTitle": {
+                    "value": "Expiration Time in the Future?"
+                  },
+                  "rightValueB": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"tokenExpirationTime\",\n        \"data\": \"{{local.mdtprhtds9.payload.output.tokenExpirationTime}}\",\n        \"tooltip\": \"{{local.mdtprhtds9.payload.output.tokenExpirationTime}}\",\n        \"children\": [\n          {\n            \"text\": \"tokenExpirationTime\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                },
+                "idUnique": "p5lpmaz1mw"
+              },
+              "position": {
+                "x": 544.6839362028687,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "wkgphqx23i",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "properties": {
+                  "fvhd31940k": {
+                    "value": "anyTriggersFalse"
+                  },
+                  "e4qstolb9u": {
+                    "value": "allTriggersTrue"
+                  },
+                  "lzaawvd7lq": {
+                    "value": "allTriggersFalse"
+                  }
+                },
+                "idUnique": "v0hvd8858c"
+              },
+              "position": {
+                "x": 651.7575106840162,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "0f5exll7if",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "Http",
+                "status": "configured",
+                "capabilityName": "createSuccessResponse",
+                "type": "action",
+                "properties": {
+                  "claimsNameValuePairs": {
+                    "value": [
+                      {
+                        "name": null,
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"teleport.svg\",\n        \"url\": \"accessToken\",\n        \"data\": \"{{local.g70z5mrb7m.payload.output.accessToken}}\",\n        \"tooltip\": \"{{local.g70z5mrb7m.payload.output.accessToken}}\",\n        \"children\": [\n          {\n            \"text\": \"accessToken\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                        "key": 0.4329801212926543,
+                        "type": "string",
+                        "nameDefault": "accessToken"
+                      }
+                    ]
+                  },
+                  "nodeTitle": {
+                    "value": "Return Token"
+                  }
+                },
+                "idUnique": "ay5wzlvu7y"
+              },
+              "position": {
+                "x": 544.6839362028687,
+                "y": 691.0626915448768
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "memn6eu23q",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "Http",
+                "status": "configured",
+                "capabilityName": "makeRestApiCall",
+                "type": "trigger",
+                "properties": {
+                  "url": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"https://auth.pingone.com/\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"companyId\",\n        \"data\": \"{{global.companyId}}\",\n        \"tooltip\": \"{{global.companyId}}\",\n        \"children\": [\n          {\n            \"text\": \"companyId\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"/as/token\"\n      }\n    ]\n  }\n]"
+                  },
+                  "httpMethod": {
+                    "value": "POST"
+                  },
+                  "httpBody": {
+                    "value": "xwwwFormUrlEncoded"
+                  },
+                  "bodyParams": {
+                    "value": [
+                      {
+                        "key": "grant_type",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"client_credentials\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  },
+                  "headers": {
+                    "value": [
+                      {
+                        "key": "Authorization",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Basic \"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"encodedCredentials\",\n        \"data\": \"{{local.fvhd31940k.payload.output.encodedCredentials}}\",\n        \"tooltip\": \"{{local.fvhd31940k.payload.output.encodedCredentials}}\",\n        \"children\": [\n          {\n            \"text\": \"encodedCredentials\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  },
+                  "outputSchema": {
+                    "value": "{\r\n    \"type\": \"object\",\r\n    \"properties\": {\r\n        \"access_token\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"token_type\": {\r\n            \"type\": \"string\"\r\n        },\r\n        \"expires_in\": {\r\n            \"type\": \"number\"\r\n        }\r\n    }\r\n}"
+                  },
+                  "keepOutputIfNotValid": {
+                    "value": true
+                  },
+                  "nodeTitle": {
+                    "value": "Client Credentials Flow"
+                  }
+                },
+                "idUnique": "4jomst35n5"
+              },
+              "position": {
+                "x": 839.1362660260243,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "fvhd31940k",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "customFunction",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "Encode Basic Credentials"
+                  },
+                  "nodeDescription": {
+                    "value": "Base64 encode clientId:clientSecret"
+                  },
+                  "outputSchema": {
+                    "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"encodedCredentials\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+                  },
+                  "variableInputList": {
+                    "value": [
+                      {
+                        "name": "clientId",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"07af3af0-6108-4985-97d5-b6332b9f99cd\"\n      }\n    ]\n  }\n]"
+                      },
+                      {
+                        "name": "clientSecret",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"q3fJzdS4yLYvCefX1J-DzDsP5kVAAZK3zii5h0t3tdnwrqAXce0.TGN45rbT5t9n\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  },
+                  "code": {
+                    "value": "/**\n * Encode basic credentials\n * @param {string} clientId - The client Id to encode\n * @param {string} clientSecret - The client secret to encode\n * @returns {string} base64 encoded clientId:clientSecret\n */\nmodule.exports = a = async ({ params }) => {\n  const clientId = params.clientId;\n  const clientSecret = params.clientSecret;\n\n  // If either value is missing, return an error\n  if (!clientId || !clientSecret) {\n    return false;\n  }\n\n  const encodedCredentials = new Buffer(clientId + \":\" + clientSecret).toString(\"base64\");\n\n  return { 'encodedCredentials': encodedCredentials }\n}"
+                  }
+                },
+                "idUnique": "4tcluppohj"
+              },
+              "position": {
+                "x": 544.6839362028687,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "09cgpbh9av",
+                "nodeType": "EVAL",
+                "idUnique": "oa34ewgd4v"
+              },
+              "position": {
+                "x": 651.7575106840162,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "9k9iroaymw",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "grxfz42ruk"
+              },
+              "position": {
+                "x": 946.2098405071717,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "iu9m5eea1t",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "customFunction",
+                "type": "trigger",
+                "properties": {
+                  "code": {
+                    "value": "const decodeJWT = (token) => {\n\tconst parts = token.split('.');\n\tlet [header, payload] = parts.map((part) => Buffer.from(part, 'base64'));\n\theader = JSON.parse(header.toString());\n\tpayload = JSON.parse(payload.toString());\n\tconst decoded = { header, payload, signature: parts[2] };\n\treturn decoded;\n}\n\nmodule.exports = a = async ({ params }) => {\n\tconst { access_token } = params;\n\tconst { payload: { exp } } = decodeJWT(access_token)\n\treturn { 'tokenExpiration': exp }\n}"
+                  },
+                  "variableInputList": {
+                    "value": [
+                      {
+                        "name": "access_token",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"access_token\",\n        \"data\": \"{{local.memn6eu23q.payload.output.rawResponse.body.access_token}}\",\n        \"tooltip\": \"{{local.memn6eu23q.payload.output.rawResponse.body.access_token}}\",\n        \"children\": [\n          {\n            \"text\": \"access_token\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  },
+                  "outputSchema": {
+                    "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"tokenExpiration\": {\n\t\t\t\t\"type\": \"number\"\n\t\t\t}\n\t\t}\n\t}\n}"
+                  },
+                  "nodeTitle": {
+                    "value": "Get Token Expire Time"
+                  }
+                },
+                "idUnique": "wavl9corip"
+              },
+              "position": {
+                "x": 1133.58859584918,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "7l6w6ln2oc",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "mf0in9ta3n"
+              },
+              "position": {
+                "x": 1240.6621703303272,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "e6ti9mks9c",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "ngsh865u1r"
+              },
+              "position": {
+                "x": 384.0735744811475,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "utz0djo487",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Node",
+                "status": "configured",
+                "capabilityName": "startNode",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "Get access token"
+                  }
+                },
+                "idUnique": "hrkvqy0zag"
+              },
+              "position": {
+                "x": 277,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "9xfb9drjbk",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "umdjdiij1o"
+              },
+              "position": {
+                "x": 384.0735744811475,
+                "y": 691.0626915448768
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "g70z5mrb7m",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Node",
+                "status": "configured",
+                "capabilityName": "startNode",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "Finish flow"
+                  },
+                  "inputSchema": {
+                    "value": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"success\": {\n\t\t\t\"type\": \"boolean\",\n\t\t\t\"displayName\": \"success\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"success\"\n\t\t},\n\t\t\"accessToken\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"displayName\": \"Access Token\",\n\t\t\t\"preferredControlType\": \"textField\",\n\t\t\t\"enableParameters\": true,\n\t\t\t\"propertyName\": \"accessToken\"\n\t\t}\n\t}\n}"
+                  }
+                },
+                "idUnique": "s8eoed3bit"
+              },
+              "position": {
+                "x": 277,
+                "y": 691.0626915448768
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "e4qstolb9u",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Node",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "g70z5mrb7m"
+                  },
+                  "accessToken": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"functions.svg\",\n        \"url\": \"access_token\",\n        \"data\": \"{{local.mdtprhtds9.payload.output.access_token}}\",\n        \"tooltip\": \"{{local.mdtprhtds9.payload.output.access_token}}\",\n        \"children\": [\n          {\n            \"text\": \"access_token\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                },
+                "idUnique": "htsu855zr7"
+              },
+              "position": {
+                "x": 839.1362660260243,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "lzaawvd7lq",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Node",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "utz0djo487"
+                  }
+                },
+                "idUnique": "uxtgkz7jy5"
+              },
+              "position": {
+                "x": 839.1362660260243,
+                "y": 316.30518086086056
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "jq1v8ccrm2",
+                "nodeType": "EVAL",
+                "label": "Evaluator",
+                "idUnique": "7oc1ubixpe"
+              },
+              "position": {
+                "x": 1535.1145001534828,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "nepb8f1k9l",
+                "nodeType": "CONNECTION",
+                "connectionId": "e7eae662d2ca276e4c6f097fc36a3bb1",
+                "connectorId": "nodeConnector",
+                "name": "Node",
+                "label": "Node",
+                "status": "configured",
+                "capabilityName": "goToNode",
+                "type": "action",
+                "properties": {
+                  "nodeInstanceId": {
+                    "value": "g70z5mrb7m"
+                  },
+                  "accessToken": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"access_token\",\n        \"data\": \"{{local.memn6eu23q.payload.output.rawResponse.body.access_token}}\",\n        \"tooltip\": \"{{local.memn6eu23q.payload.output.rawResponse.body.access_token}}\",\n        \"children\": [\n          {\n            \"text\": \"access_token\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                  }
+                },
+                "idUnique": "kigbpqay2j"
+              },
+              "position": {
+                "x": 1695.7248618752042,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "mdtprhtds9",
+                "nodeType": "CONNECTION",
+                "connectionId": "de650ca45593b82c49064ead10b9fe17",
+                "connectorId": "functionsConnector",
+                "name": "Functions",
+                "label": "Functions",
+                "status": "configured",
+                "capabilityName": "customFunction",
+                "type": "trigger",
+                "properties": {
+                  "code": {
+                    "value": "const decodeJWT = (token) => {\n\tconst parts = token?.split('.');\n\tlet [header, payload] = parts.map((p) => Buffer.from(p, 'base64'));\n\ttry {\n\t\theader = JSON.parse(header?.toString());\n\t\tpayload = JSON.parse(payload?.toString());\n\t} catch (e) {\n\t\theader = {};\n\t\tpayload = {};\n\t}\n\treturn {\n\t\theader,\n\t\tpayload,\n\t\t'signature': parts[2] || ''\n\t};\n}\n\nmodule.exports = a = async ({ params }) => {\n\tconst { access_token, eventTimestamp } = params;\n\tconst { payload: { exp = 0 } } = decodeJWT(access_token);\n\t// go from milliseconds to seconds\n\tlet systemTimePlusOne = (eventTimestamp.substring(0, 10)) * 1;\n\t// give one second grace period\n\tsystemTimePlusOne = systemTimePlusOne + 1;\n\n\treturn {\n\t\t'tokenExpirationTime': exp,\n\t\tsystemTimePlusOne,\n\t\taccess_token,\n\t\teventTimestamp\n\t}\n}"
+                  },
+                  "variableInputList": {
+                    "value": [
+                      {
+                        "name": "access_token",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"{{global.flow.variables.WORKER_AT}}\"\n      }\n    ]\n  }\n]"
+                      },
+                      {
+                        "name": "eventTimestamp",
+                        "preferredDataType": "string",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"eventTimestamp\",\n        \"data\": \"{{global.eventTimestamp}}\",\n        \"tooltip\": \"{{global.eventTimestamp}}\",\n        \"children\": [\n          {\n            \"text\": \"eventTimestamp\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                      }
+                    ]
+                  },
+                  "outputSchema": {
+                    "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"tokenExpirationTime\": {\n\t\t\t\t\"type\": \"number\"\n\t\t\t},\n\t\t\t\"systemTimePlusOne\": {\n\t\t\t\t\"type\": \"number\"\n\t\t\t},\n\t\t\t\"access_token\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}"
+                  },
+                  "nodeTitle": {
+                    "value": "Get Token and Expiration Time"
+                  }
+                },
+                "idUnique": "sub8evlecb"
+              },
+              "position": {
+                "x": 277,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "4ynqvsyrw1",
+                "nodeType": "EVAL",
+                "idUnique": "g704fheku1"
+              },
+              "position": {
+                "x": 384.0735744811475,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "trl5r34f9i",
+                "nodeType": "CONNECTION",
+                "connectionId": "06922a684039827499bdbdd97f49827b",
+                "connectorId": "variablesConnector",
+                "name": "Variables",
+                "label": "Variables",
+                "status": "configured",
+                "capabilityName": "saveFlowValue",
+                "type": "trigger",
+                "properties": {
+                  "saveFlowVariables": {
+                    "value": [
+                      {
+                        "name": "WORKER_AT",
+                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"access_token\",\n        \"data\": \"{{local.memn6eu23q.payload.output.rawResponse.body.access_token}}\",\n        \"tooltip\": \"{{local.memn6eu23q.payload.output.rawResponse.body.access_token}}\",\n        \"children\": [\n          {\n            \"text\": \"access_token\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                        "key": 0.6559920654851215,
+                        "label": "WORKER_AT (string - flow)",
+                        "type": "string",
+                        "nameDefault": "access_token"
+                      }
+                    ]
+                  },
+                  "nodeTitle": {
+                    "value": "Cache Token"
+                  }
+                },
+                "idUnique": "zir18laqwe"
+              },
+              "position": {
+                "x": 1428.0409256723356,
+                "y": 476.9155425825818
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            }
+          ],
+          "edges": [
+            {
+              "data": {
+                "id": "4u410yz0ru",
+                "source": "g70z5mrb7m",
+                "target": "9xfb9drjbk"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "t042dj8mbr",
+                "source": "wkgphqx23i",
+                "target": "e4qstolb9u"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "q0jtjsttgu",
+                "source": "4ynqvsyrw1",
+                "target": "jnza2xc79t"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "kibdfm0mtf",
+                "source": "mdtprhtds9",
+                "target": "4ynqvsyrw1"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "6w8aesvvmh",
+                "source": "jnza2xc79t",
+                "target": "wkgphqx23i"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "bflq6x7io7",
+                "source": "utz0djo487",
+                "target": "e6ti9mks9c"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "xnpm1vfrod",
+                "source": "jq1v8ccrm2",
+                "target": "nepb8f1k9l"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "mg445nqkv0",
+                "source": "fvhd31940k",
+                "target": "09cgpbh9av"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "anm7pldks9",
+                "source": "09cgpbh9av",
+                "target": "memn6eu23q"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "wyzoaizhes",
+                "source": "memn6eu23q",
+                "target": "9k9iroaymw"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "atj4ysfsmc",
+                "source": "9k9iroaymw",
+                "target": "iu9m5eea1t"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "lyweogyq5x",
+                "source": "iu9m5eea1t",
+                "target": "7l6w6ln2oc"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "xj43gbwi4l",
+                "source": "wkgphqx23i",
+                "target": "lzaawvd7lq"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "j1tnbyj5s7",
+                "source": "e6ti9mks9c",
+                "target": "fvhd31940k"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "z5ja11bv4f",
+                "source": "9xfb9drjbk",
+                "target": "0f5exll7if"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "qw2qgf0b78",
+                "source": "7l6w6ln2oc",
+                "target": "trl5r34f9i"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "2wb1tf7go0",
+                "source": "trl5r34f9i",
+                "target": "jq1v8ccrm2"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            }
+          ]
+        },
+        "data": {},
+        "zoomingEnabled": true,
+        "userZoomingEnabled": true,
+        "zoom": 1,
+        "minZoom": 1e-50,
+        "maxZoom": 1e+50,
+        "panningEnabled": true,
+        "userPanningEnabled": true,
+        "pan": {
+          "x": 0,
+          "y": 0
+        },
+        "boxSelectionEnabled": true,
+        "renderer": {
+          "name": "null"
+        }
+      },
+      "flowColor": "#CACED3",
+      "savedDate": 1722532383657,
+      "variables": [
+        {
+          "context": "flow",
+          "createdDate": 1722528408954,
+          "fields": {
+            "type": "string",
+            "displayName": "",
+            "mutable": true,
+            "min": 0,
+            "max": 2000,
+            "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRlZmF1bHQifQ.eyJjbGllbnRfaWQiOiIwN2FmM2FmMC02MTA4LTQ5ODUtOTdkNS1iNjMzMmI5Zjk5Y2QiLCJpc3MiOiJodHRwczovL2F1dGgucGluZ29uZS5jb20vNGM3ODMwYWMtOGUxYi00NmNmLTgyYmYtMjM5NDU1Zjc4ZGZmL2FzIiwianRpIjoiMTUzMzc5NGUtNzQyMS00ZjNkLWJhNTEtNDRlNGQ5MTdhMTEzIiwiaWF0IjoxNzIyNTMyNDE5LCJleHAiOjE3MjI1MzYwMTksImF1ZCI6WyJodHRwczovL2FwaS5waW5nb25lLmNvbSJdLCJlbnYiOiI0Yzc4MzBhYy04ZTFiLTQ2Y2YtODJiZi0yMzk0NTVmNzhkZmYiLCJvcmciOiIwYWE0NzZlZS0xMDVmLTQ0NDItYThlZS04MmUzNzM1ZjVmNjcifQ.P3g5lxDwIQbeoLC5XgiTTRKkBFh82-wGhroi2nPH6Iw_L_kg0lJC8lClQ9zcNI0Y-uAIaascIIL2ebzihJgNUzxp62VV7eVaCF2XHf27BslhXMjzgFjaA66C8vxgvo8Q8SpCaAd6-b-ktKAoVk_RVBF7fZkfSC4FRHWMTsqVIILJZRXHjLkuGE2qeayqy8VP4Lm2-5WgKcwUJz5oAPMRg7MI668wObeIHDEPzkEKFOXzhKQi6BWbJRnJ5-5MnKqk8wZp1mbWYnPf6duy2fXUrmd5khPV44OpycDxmx2pn9aJpyi42OXurEkpKdKiwZpVSD0FmFiOxtUYMkWnJzfKlw"
+          },
+          "flowId": "8a903ffdfccbc3067c8592d0b7be60e6",
+          "id": "a7a8b11f-0016-4147-af42-dc5b317bdb55",
+          "type": "property",
+          "updatedDate": 1722532419592,
+          "visibility": "private",
+          "name": "WORKER_AT##SK##flow##SK##8a903ffdfccbc3067c8592d0b7be60e6",
+          "companyId": "4c7830ac-8e1b-46cf-82bf-239455f78dff"
+        }
+      ]
+    }
+  ],
+  "companyId": "4c7830ac-8e1b-46cf-82bf-239455f78dff",
+  "customerId": "8f17a890062ecb17f30c2cdd04a501f0"
+}
