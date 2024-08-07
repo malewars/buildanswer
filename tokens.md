@@ -24,19 +24,19 @@
 * https://docs.pingidentity.com/r/en-us/pingone/p1_t_editcustomidtokenmapping
 * https://apidocs.pingidentity.com/pingone/platform/v1/api/src/authentication-apis/openid-connect-oauth-2/authorize-intro/
 While triggering the flow, they send response_mode=pi.flow  in the requestParams
-  ```
+```
   requestParams=redirectUri,<snip> ...</snip>,userID,riskLevel,firstTimeSignIn,<snip> ...</snip>,acr_values,response_type,redirect_uri,response_mode,<snip> ...</snip>,client_id,MFADevice,riskEvalID
 
 OR 
 
 requestParams=acr_values,response_type,redirect_uri,scope,response_mode,<snip>...
-  ```
+```
 * Managing the auth req and response
 ```
 SAML applications can request a lower-priority policy by sending a SAML 2.0 authentication request with the RequestedAuthnContext parameter, where the value indicates the desired PingOne authentication name or DaVinci flow policy ID. Note that the enableRequestAuthnContext must be set to true for the SAML application
-```
+
 example: using davini in p1
-```
+
 1) Create the new flow
 2) Enable PingOne SSO button
 3) Add Flow to an application in DaVinci:
