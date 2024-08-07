@@ -56,6 +56,8 @@ Build the app and select the Da Vinci Policy id ->
 ```
 policyId-58f4ba351b36b716e3811c0c1371b080
 
+https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/davinci/policy/12260acfb11e99d1b88afbdb3cba4baf/authorize?client_id=ac0e86c48369a33f18dd3234367d316b&redirect_uri=https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/rp/callback/openid_connect&state=00bba4b3-0045-4e13-9070-19b21b0936a0&response_type=code&scope=openid%20profile&nonce=00bba4b3-0045-4e13-9070-19b21b0936a0
+
 
 https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/davinci/policy/58f4ba351b36b716e3811c0c1371b080/authorize?client_id=ac0e86c48369a33f18dd3234367d316b&redirect_uri=https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/rp/callback/openid_connect&state=004b27d6-ea0e-41e9-852c-c1440291d518&response_type=code&scope=openid%20profile&acr_values=policyId%2F58f4ba351b36b716e3811c0c1371b080&nonce=004b27d6-ea0e-41e9-852c-c1440291d518
 ```
