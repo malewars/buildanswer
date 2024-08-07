@@ -31,3 +31,11 @@ OR
 
 requestParams=acr_values,response_type,redirect_uri,scope,response_mode,<snip>...
   ```
+* Managing the auth req and response
+```
+SAML applications can request a lower-priority policy by sending a SAML 2.0 authentication request with the RequestedAuthnContext parameter, where the value indicates the desired PingOne authentication name or DaVinci flow policy ID. Note that the enableRequestAuthnContext must be set to true for the SAML application
+```
+example:
+```
+https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/davinci/policy/58f4ba351b36b716e3811c0c1371b080/authorize?client_id=ac0e86c48369a33f18dd3234367d316b&redirect_uri=https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/rp/callback/openid_connect&state=004b27d6-ea0e-41e9-852c-c1440291d518&response_type=code&scope=openid%20profile&acr_values=policyId%2F58f4ba351b36b716e3811c0c1371b080&nonce=004b27d6-ea0e-41e9-852c-c1440291d518
+```
