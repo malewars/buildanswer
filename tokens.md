@@ -61,3 +61,23 @@ https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/davinci/policy/122
 
 https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/davinci/policy/58f4ba351b36b716e3811c0c1371b080/authorize?client_id=ac0e86c48369a33f18dd3234367d316b&redirect_uri=https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/rp/callback/openid_connect&state=004b27d6-ea0e-41e9-852c-c1440291d518&response_type=code&scope=openid%20profile&acr_values=policyId%2F58f4ba351b36b716e3811c0c1371b080&nonce=004b27d6-ea0e-41e9-852c-c1440291d518
 ```
+```
+Terraform refresh
+Terraform show will expand 
+
+# data.local_file.get_token:
+data "local_file" "get_token" {
+    content              = <<-EOT
+        eyJhbGciOiJSUzI1NiIsImtpZCI6ImRlZmF1bHQifQ.eyJjbGllbnRfaWQiOiIzNWI1YTg2YS00YjhiLTRjYmYtYTc1ZC0zYTMzYzlmNTc0NWMiLCJpc3MiOiJodHRwczovL2F1dGgucGluZ29uZS5jb20vNzM3YmM5OWEtZWQ5Ny00Y2QyLTljZTUtM2ZlMmFiNzI2MGE1L2FzIiwianRpIjoiMTdmMTExNmItMjk0Mi00MmVhLThjMTUtM2MyNjkyZGI1ZTFiIiwiaWF0IjoxNzIzMDUxMzEzLCJleHAiOjE3MjMwNTQ5MTMsImF1ZCI6WyJodHRwczovL2FwaS5waW5nb25lLmNvbSJdLCJlbnYiOiI3MzdiYzk5YS1lZDk3LTRjZDItOWNlNS0zZmUyYWI3MjYwYTUiLCJvcmciOiJmNDk5ZDhmMi04Y2Y1LTRmMTgtOWRiNS04MzZhMzhiNzY1ZTYifQ.UyDLnmSaSuoTMo0o4Kc6yfRzsYSj0wtnEqHkv351Tly99sh0LElaamHlROX_g3-mIkWUVPOMzXcRzhs81SHhGTytz0DBHfSydtanrukXil7iyhRtpRqEF9EWGORVS7E2woBv0SwIhRmklDYtul4HoiL7RFkVH6cSxaIFWwokKQ4s_UMa1xmqWSmqTSRbSSepTV7jo6R4HJgVgNYDd68YZ2-lGG5Jj2fzqacW47BCVxOxCqMSQOXclNa-OY0WuE0OIwvivM3rfpjm_c5Mr1pNq3QoVnM6KRrCCFiHdID_P3JTgiR1mGelEO3RSaCSOeoFgNe4qcq7GBYarR1hYf0PPQ
+    EOT
+    content_base64       = "ZXlKaGJHY2lPaUpTVXpJMU5pSXNJbXRwWkNJNkltUmxabUYxYkhRaWZRLmV5SmpiR2xsYm5SZmFXUWlPaUl6TldJMVlUZzJZUzAwWWpoaUxUUmpZbVl0WVRjMVpDMHpZVE16WXpsbU5UYzBOV01pTENKcGMzTWlPaUpvZEhSd2N6b3ZMMkYxZEdndWNHbHVaMjl1WlM1amIyMHZOek0zWW1NNU9XRXRaV1E1TnkwMFkyUXlMVGxqWlRVdE0yWmxNbUZpTnpJMk1HRTFMMkZ6SWl3aWFuUnBJam9pTVRkbU1URXhObUl0TWprME1pMDBNbVZoTFRoak1UVXRNMk15TmpreVpHSTFaVEZpSWl3aWFXRjBJam94TnpJek1EVXhNekV6TENKbGVIQWlPakUzTWpNd05UUTVNVE1zSW1GMVpDSTZXeUpvZEhSd2N6b3ZMMkZ3YVM1d2FXNW5iMjVsTG1OdmJTSmRMQ0psYm5ZaU9pSTNNemRpWXprNVlTMWxaRGszTFRSalpESXRPV05sTlMwelptVXlZV0kzTWpZd1lUVWlMQ0p2Y21jaU9pSm1ORGs1WkRobU1pMDRZMlkxTFRSbU1UZ3RPV1JpTlMwNE16WmhNemhpTnpZMVpUWWlmUS5VeURMbm1TYVN1b1RNbzBvNEtjNnlmUnpzWVNqMHd0bkVxSGt2MzUxVGx5OTlzaDBMRWxhYW1IbFJPWF9nMy1tSWtXVVZQT016WGNSemhzODFTSGhHVHl0ejBEQkhmU3lkdGFucnVrWGlsN2l5aFJ0cFJxRUY5RVdHT1JWUzdFMndvQnYwU3dJaFJta2xEWXR1bDRIb2lMN1JGa1ZINmNTeGFJRld3b2tLUTRzX1VNYTF4bXFXU21xVFNSYlNTZXBUVjdqbzZSNEhKZ1ZnTllEZDY4WVoyLWxHRzVKajJmenFhY1c0N0JDVnhPeENxTVNRT1hjbE5hLU9ZMFd1RTBPSXd2aXZNM3JmcGptX2M1TXIxcE5xM1FvVm5NNktSckNDRmlIZElEX1AzSlRnaVIxbUdlbEVPM1JTYUNTT2VvRmdOZTRxY3E3R0JZYXJSMWhZZjBQUFEK"
+    content_base64sha256 = "P67kxaUNhjcW1n4KJJJonkvIHY6eU4QM37xrAXpFT0E="
+    content_base64sha512 = "skR1ueOyerm5cI10RhnhK2xcAwM6WXzLb1tsVvVNEkwj4JmVImlFv/wuMQR58G7tHh5KfczXySw4iGEGqk1VHw=="
+    content_md5          = "8e1f97c677060c3a668e4b4d3704b7b0"
+    content_sha1         = "d314a632acce086bd9e328ce95effa9a3297eb69"
+    content_sha256       = "3faee4c5a50d863716d67e0a2492689e4bc81d8e9e53840cdfbc6b017a454f41"
+    content_sha512       = "b24475b9e3b27ab9b9708d744619e12b6c5c03033a597ccb6f5b6c56f54d124c23e09995226945bffc2e310479f06eed1e1e4a7dccd7c92c38886106aa4d551f"
+    filename             = "./token.json"
+    id                   = "d314a632acce086bd9e328ce95effa9a3297eb69"
+}
+```
