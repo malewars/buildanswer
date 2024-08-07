@@ -47,8 +47,8 @@ Build the app and select the Da Vinci Policy id ->
 + Add Policy
 + Click Da Vinci Policies 
 ```
-![image](https://github.com/user-attachments/assets/5ed254f4-930f-45bf-bb98-3ee2f6798840)
 
+![image](https://github.com/user-attachments/assets/5ed254f4-930f-45bf-bb98-3ee2f6798840)
 ![image](https://github.com/user-attachments/assets/321162a6-fffa-4b2b-bcfb-434f1e5956d4)
 ![image](https://github.com/user-attachments/assets/fd093262-02b5-4e22-b36f-032041d05cb1)
 ![image](https://github.com/user-attachments/assets/c7202fb2-8383-43db-85b2-8ecd1c642fae)
