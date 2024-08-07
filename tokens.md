@@ -18,3 +18,16 @@
 }
 ```
 
+* https://docs.pingidentity.com/r/en-us/pingone/pingone_edit_application_oidc
+
+* https://docs.pingidentity.com/r/en-us/pingfederate-112/pf_openid_provider_config_endpoint
+* https://docs.pingidentity.com/r/en-us/pingone/p1_t_editcustomidtokenmapping
+* https://apidocs.pingidentity.com/pingone/platform/v1/api/src/authentication-apis/openid-connect-oauth-2/authorize-intro/
+While triggering the flow, they send response_mode=pi.flow  in the requestParams
+  ```
+  requestParams=redirectUri,<snip> ...</snip>,userID,riskLevel,firstTimeSignIn,<snip> ...</snip>,acr_values,response_type,redirect_uri,response_mode,<snip> ...</snip>,client_id,MFADevice,riskEvalID
+
+OR 
+
+requestParams=acr_values,response_type,redirect_uri,scope,response_mode,<snip>...
+  ```
