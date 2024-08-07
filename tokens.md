@@ -35,7 +35,27 @@ requestParams=acr_values,response_type,redirect_uri,scope,response_mode,<snip>..
 ```
 SAML applications can request a lower-priority policy by sending a SAML 2.0 authentication request with the RequestedAuthnContext parameter, where the value indicates the desired PingOne authentication name or DaVinci flow policy ID. Note that the enableRequestAuthnContext must be set to true for the SAML application
 ```
-example:
+example: using davini in p1
 ```
+1) Create the new flow
+2) Enable PingOne SSO button
+3) Add Flow to an application in DaVinci:
+4) Grab the Policy ID
+Policy ID: 1f98d450834abe2defa8d3462a6c0405
+
+Build the app and select the Da Vinci Policy id ->
++ Add Policy
++ Click Da Vinci Policies 
+```
+![image](https://github.com/user-attachments/assets/5ed254f4-930f-45bf-bb98-3ee2f6798840)
+
+![image](https://github.com/user-attachments/assets/321162a6-fffa-4b2b-bcfb-434f1e5956d4)
+![image](https://github.com/user-attachments/assets/fd093262-02b5-4e22-b36f-032041d05cb1)
+![image](https://github.com/user-attachments/assets/c7202fb2-8383-43db-85b2-8ecd1c642fae)
+
+```
+policyId-58f4ba351b36b716e3811c0c1371b080
+
+
 https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/davinci/policy/58f4ba351b36b716e3811c0c1371b080/authorize?client_id=ac0e86c48369a33f18dd3234367d316b&redirect_uri=https://auth.pingone.com/3830071f-dce6-4768-a0e4-fed7dc2de6b2/rp/callback/openid_connect&state=004b27d6-ea0e-41e9-852c-c1440291d518&response_type=code&scope=openid%20profile&acr_values=policyId%2F58f4ba351b36b716e3811c0c1371b080&nonce=004b27d6-ea0e-41e9-852c-c1440291d518
 ```
